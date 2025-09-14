@@ -1,0 +1,71 @@
+.action-btn {
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  border: 1px solid var(--muted);
+  border-radius: 4px;
+  color: var(--gray-500);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border: 1px solid var(--secondary-default);
+    color: var(--secondary-default);
+  }
+}
+
+._btn {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 7px 16px;
+  min-height: 40px;
+  min-width: 120px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--gray-0);
+
+  &.primary {
+    background-color: var(--blue-primary-clr);
+    border: 1px solid var(--blue-primary-clr);
+
+    &:hover {
+      background-color: var(--blue-primary-dark-clr);
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    color: var(--gray-700);
+    border: 1px solid var(--muted);
+
+    &:hover {
+      border: 1px solid var(--blue-primary-clr);
+      color: var(--blue-primary-clr);
+    }
+  }
+
+  &.success {
+    border: 1px solid var(--green-default);
+    background-color: var(--green-default);
+
+    &:hover {
+      background-color: var(--green-dark);
+    }
+  }
+
+  &.danger {
+    border: 1px solid var(--red-default);
+    background-color: var(--red-default);
+
+    &:hover {
+      background-color: var(--red-dark);
+    }
+  }
+}
+
+._btn-lg {
+  font-size: 16px;
+  padding: 9px 20px;
+  min-width: 180px;
+}

@@ -1,0 +1,76 @@
+@use "../../core/mixins/custom-scrollbar" as scrollbar;
+
+.sidebar-menu {
+  position: fixed;
+  bottom: 0;
+  top: 96px;
+  left: 0;
+  width: 300px;
+  background-color: var(--background);
+  overflow: hidden;
+  transition: width 0.3s ease;
+
+  .scroll-style-85 {
+    @include scrollbar.custom-scrollbar(calc(100% - 32px), 0);
+  }
+
+  &.collapsed {
+    width: 60px;
+  }
+
+  .nav-items.collapsed {
+    justify-content: center;
+  }
+
+  &.collapsed .text-truncate {
+    display: none;
+  }
+}
+
+.sidebar-wrapper .nav-items {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--gray-0);
+  text-transform: capitalize;
+  border-radius: 6px;
+  margin: 8px 20px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+
+  &:hover:not(.active) {
+    background-color: var(--blue-primary-clr);
+    color: var(--gray-0);
+  }
+
+  &.active {
+    background-color: var(--blue-primary-clr);
+    color: var(--gray-0);
+
+    &::before {
+      transform: scaleY(1);
+      opacity: 1;
+      transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+        opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 4px;
+    height: 80%;
+    margin-left: -20px;
+    background-color: var(--blue-primary-clr);
+    border-radius: 0 6px 6px 0;
+    transform: scaleY(0.0001);
+    opacity: 0;
+    z-index: 9;
+    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+      opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .nav-icon {
+    font-size: 20px;
+  }
+}

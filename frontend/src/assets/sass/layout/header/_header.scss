@@ -1,0 +1,238 @@
+.main-header {
+  box-shadow: 0 1px 0 rgba(177, 165, 165, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 99;
+  background: #c1121f;
+  padding: 10px 15px;
+  left: 0;
+  right: 0;
+
+  .profile-info {
+    h6 {
+      font-size: 16px;
+      line-height: 18px;
+      color: var(--gray-0);
+      max-width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    p {
+      color: var(--gray-0);
+      max-width: 200px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.notification-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 450px;
+  background: var(--background);
+  border: 1px solid var(--muted);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 99;
+  padding: 20px 24px;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .top-header .ios-checkbox .checkbox-wrapper {
+    width: 20px;
+    height: 20px;
+  }
+
+  .notification-dropdown-body {
+    max-height: 360px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.375rem;
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: rgb(146, 146, 146);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .notification-item {
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--gray-100);
+      }
+
+      .icon {
+        width: 36px;
+        height: 36px;
+        padding: 4px;
+        border-radius: 4px;
+        background-color: rgba(241, 241, 241, 0.7);
+
+        svg {
+          width: 20px;
+        }
+      }
+
+      .content {
+        p {
+          font-size: 14px;
+          line-height: 14px;
+          color: var(--gray-900);
+          margin-bottom: 2px;
+        }
+
+        h6 {
+          font-size: 12px;
+          color: var(--gray-500);
+        }
+      }
+    }
+  }
+}
+
+.top-bar-content {
+  height: 96px;
+  background: linear-gradient(to right, #850b0bff 30%, #0085fe);
+  padding: 16px 24px;
+
+  @media (max-width:480px) {
+    padding: 16px 15px;
+  }
+
+  h1 {
+    font-size: 44px;
+    background: linear-gradient(to top, rgb(4, 106, 56), rgb(255, 255, 255), rgb(255, 103, 31));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width:991px) {
+      font-size: 30px;
+    }
+
+    @media (max-width:480px) {
+      font-size: 18px;
+    }
+  }
+
+  .logo-img {
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+
+    @media (max-width:480px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 200px;
+  background: var(--background);
+  border: 1px solid var(--muted);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 99;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .dropdown-item {
+    font-size: 14px;
+    line-height: normal;
+    padding: 8px 10px;
+    margin: 2px 0;
+    color: var(--gray-700);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: transparent;
+
+    &:hover {
+      background-color: var(--gray-100);
+    }
+  }
+}
+
+@media (max-width:991px) {
+  .notification-dropdown-menu {
+    width: 350px;
+    padding: 15px 20px;
+
+    .notification-dropdown-body {
+      max-height: 360px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+
+      .notification-item {
+        .icon {
+          width: 34px;
+          height: 34px;
+        }
+
+        .content p {
+          font-size: 13px;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .main-header {
+    .profile-info {
+      h6 {
+        max-width: 100px;
+      }
+
+      p {
+        max-width: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width:480px) {
+  .notification-dropdown-menu {
+    left: -85px;
+    width: 300px;
+    padding: 10px 15px;
+  }
+}

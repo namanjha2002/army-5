@@ -1,0 +1,21 @@
+.filter-wrapper {
+  .search-wrapper {
+    button {
+      left: 15px;
+    }
+
+    .form-control {
+      padding: 7px 20px 7px 40px;
+      min-height: 40px;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .form-control,
+  .css-3iigni-container,
+  .css-b62m3t-container {
+    max-width: 180px;
+    min-width: 180px;
+  }
+}

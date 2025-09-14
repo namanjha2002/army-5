@@ -1,0 +1,368 @@
+@use "./variables";
+
+/*---------- Reset css styles ----------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+}
+
+input[type="number"] {
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url("/media/icons/calendar.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Elements
+-------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul,
+li {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.scrollbar-hidden {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Typography
+-------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.title-display,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  color: var(--gray-900);
+  line-height: normal;
+}
+
+span {
+  line-height: normal;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 44px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.fw-4 {
+  font-weight: 400 !important;
+}
+
+.fw-5 {
+  font-weight: 500 !important;
+}
+
+.fw-6 {
+  font-weight: 600 !important;
+}
+
+.fw-7 {
+  font-weight: 700 !important;
+}
+
+.fw-8 {
+  font-weight: 800 !important;
+}
+
+.mb_30 {
+  margin-bottom: 30px;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.z-neg-1 {
+  z-index: -1;
+}
+
+.font-lexend {
+  font-family: var(--font-lexend-deca);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.error-text {
+  color: var(--red-default);
+}
+
+.bg-pending {
+  background-color: #FFF4E6 !important;
+  border: 1px solid #FFD59E !important;
+}
+
+.bg-request {
+  background-color: #F0F4FF !important;
+  border: 1px solid #B0C4FF !important;
+}
+
+.bg-raised {
+  background-color: #FFF0E6 !important;
+  border: 1px solid #FFC2A1 !important;
+}
+
+.bg-rejected {
+  background-color: #FDEBEC !important;
+  border: 1px solid #FFB3B3 !important;
+}
+
+.color-pending {
+  color: #C27000 !important;
+}
+
+.color-request {
+  color: #3355AA !important;
+}
+
+.color-raised {
+  color: #D95E1A !important;
+}
+
+.color-rejected {
+  color: #C00000 !important;
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.custom-tabs {
+  height: 100%;
+  --bs-nav-tabs-border-width: auto;
+
+  .nav-link {
+    border: none !important;
+    border-bottom: 2px solid transparent;
+    color: inherit;
+    transition: border-color 0.3s ease;
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+
+    &.active {
+      border-bottom: 2px solid var(--blue-primary-clr) !important;
+      color: var(--blue-primary-clr);
+      font-weight: 600;
+
+      .form-label {
+        color: var(--blue-primary-clr);
+      }
+    }
+  }
+}
+
+.cursor-auto {
+  cursor: auto !important;
+}
